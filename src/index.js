@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/index.css'
-import LoadApp from './components/LoadApp'
+//import './styles/index.css'
+import LoadApp from './components/Main'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(<LoadApp />, document.getElementById('root'))
