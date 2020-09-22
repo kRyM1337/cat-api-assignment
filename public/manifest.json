@@ -1,0 +1,10 @@
+{
+  "short_name": "Cat API",
+  "name": "Cat API",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
+"icons": [
+ ]
+}
