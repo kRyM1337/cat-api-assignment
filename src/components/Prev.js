@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { checkStatus } from "../helpers/httpStatusCheck";
+import React, { useState } from "react";
 
 export default function Prev(props) {
   const [cats] = useState(
