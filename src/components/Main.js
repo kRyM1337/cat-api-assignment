@@ -8,6 +8,8 @@ class Main extends Component {
     super(props);
     this.state = { catBreeds: [] };
   }
+
+  //Load from cache if possible, otherwise fetch info
   componentDidMount() {
     if (window.sessionStorage.getItem("catBreeds")) {
       this.setState({
@@ -27,31 +29,56 @@ class Main extends Component {
         .then(checkStatus)
         .then((res) => res.json())
         .then((cats) => {
-          let catNames = cats.map((cat) => cat.name);
-          this.setState({ catBreeds: catNames });
-          window.sessionStorage.setItem("catBreeds", JSON.stringify(catNames));
+          let catInfo = cats.map((cat) => {
+            return { name: cat.name, id: cat.id };
+          });
+          //Set local state and cache
+          this.setState({ catBreeds: catInfo });
+          window.sessionStorage.setItem("catBreeds", JSON.stringify(catInfo));
+        })
+        .catch((err) => {
+          console.error(err);
+          this.setState({
+            catBreeds: null,
+            errorMsg: "There has been a network error. Please try again!",
+          });
         });
     }
   }
 
   render() {
-    return (
-      <Router forceRefresh={true}>
-        <Switch>
-          <Route exact path="/breeds/:breed" component={Cat} />
-          <Route exact path="/">
-            <div id="cat-list">
-              {this.state.catBreeds.map((cat) => (
-                <React.Fragment>
-                  <a href={"breeds/" + cat}>{cat}</a>
-                  <br />
-                </React.Fragment>
-              ))}
-            </div>
-          </Route>
-        </Switch>
-      </Router>
-    );
+    if (this.state.catBreeds === null) {
+      return this.state.errorMsg;
+    } else {
+      return (
+        <Router forceRefresh={true}>
+          <Switch>
+            <Route exact path="/breeds/:breed" component={Cat} />
+            <Route exact path="/">
+              <React.Fragment>
+                <h1>Cats!</h1>
+                <div
+                  id="cat-list"
+                  style={{
+                    position: "fixed",
+                    width: "20vw",
+                    border: "1px solid black",
+                    height: "80vh",
+                    overflow: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  {this.state.catBreeds.map((cat) => (
+                    <a href={"breeds/" + cat.name}>{cat.name}</a>
+                  ))}
+                </div>
+              </React.Fragment>
+            </Route>
+          </Switch>
+        </Router>
+      );
+    }
   }
 }
 
