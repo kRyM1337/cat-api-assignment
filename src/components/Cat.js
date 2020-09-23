@@ -51,7 +51,7 @@ export default function Cat(props) {
         <Next current={props.match.params.breed} />
         <Prev current={props.match.params.breed} />
         <a
-          href="/"
+          href="/cat-api-assignment"
           style={{ position: "absolute", right: "50%", bottom: "5%" }}
         >
           Home

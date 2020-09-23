@@ -53,8 +53,8 @@ class Main extends Component {
       return (
         <Router forceRefresh={true}>
           <Switch>
-            <Route exact path="/breeds/:breed" component={Cat} />
-            <Route exact path="/">
+            <Route exact path="/cat-api-assignment/breeds/:breed" component={Cat} />
+            <Route exact path="/cat-api-assignment">
               <React.Fragment>
                 <h1>Cats!</h1>
                 <div
@@ -70,7 +70,7 @@ class Main extends Component {
                   }}
                 >
                   {this.state.catBreeds.map((cat) => (
-                    <a href={"breeds/" + cat.name}>{cat.name}</a>
+                    <a href={"/cat-api-assignment/breeds/" + cat.name}>{cat.name}</a>
                   ))}
                 </div>
               </React.Fragment>

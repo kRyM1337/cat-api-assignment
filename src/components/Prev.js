@@ -10,7 +10,7 @@ export default function Prev(props) {
     currentIndex <= 0 ? (
       <a
         id="next"
-        href={"/breeds/" + cats[cats.length - 1].name}
+        href={"/cat-api-assignment/breeds/" + cats[cats.length - 1].name}
         style={{ position: "absolute", left: "2%", bottom: "5%" }}
       >
         Prev
@@ -18,7 +18,7 @@ export default function Prev(props) {
     ) : (
       <a
         id="next"
-        href={"/breeds/" + cats[currentIndex - 1].name}
+        href={"/cat-api-assignment/breeds/" + cats[currentIndex - 1].name}
         style={{ position: "absolute", left: "2%", bottom: "5%" }}
       >
         Prev
