@@ -61,7 +61,7 @@ class Main extends Component {
                   id="cat-list"
                   style={{
                     position: "fixed",
-                    width: "20vw",
+                    width: "40vw",
                     border: "1px solid black",
                     height: "80vh",
                     overflow: "auto",
