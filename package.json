@@ -2,20 +2,22 @@
   "name": "cat-api",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://krym1337.github.io/cat-api-assignment",
+  "engines": {
+    "npm": ">=6.10.0",
+    "node": ">=12.6.3"
+  },
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -30,6 +32,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "dotenv": "^8.2.0"
   }
 }

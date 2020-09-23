@@ -9,7 +9,7 @@ export default function Next(props) {
     currentIndex === cats.length - 1 ? (
       <a
         id="next"
-        href={"/cat-api-assignment/breeds/" + cats[0].name}
+        href={"/breeds/" + cats[0].name}
         style={{ position: "absolute", right: "2%", bottom: "5%" }}
       >
         Next
@@ -17,7 +17,7 @@ export default function Next(props) {
     ) : (
       <a
         id="next"
-        href={"/cat-api-assignment/breeds/" + cats[currentIndex + 1].name}
+        href={"/breeds/" + cats[currentIndex + 1].name}
         style={{ position: "absolute", right: "2%", bottom: "5%" }}
       >
         Next

@@ -38,10 +38,7 @@ export default function Cat(props) {
     catImgs === null ? (
       <div>Loading...</div>
     ) : (
-      <div
-        id="cat-page"
-        style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
-      >
+      <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         <div style={{ width: "100vw", display: "block", fontSize: "30px" }}>
           {props.match.params.breed}
         </div>
@@ -51,7 +48,7 @@ export default function Cat(props) {
         <Next current={props.match.params.breed} />
         <Prev current={props.match.params.breed} />
         <a
-          href="/cat-api-assignment"
+          href="/"
           style={{ position: "absolute", right: "50%", bottom: "5%" }}
         >
           Home
