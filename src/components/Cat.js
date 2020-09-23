@@ -43,7 +43,7 @@ export default function Cat(props) {
           {props.match.params.breed}
         </div>
         {catImgs.map((catUrl) => (
-          <img width="40%" height="20%" src={catUrl} alt="" />
+          <img width="20%" height="20%" src={catUrl} alt="" />
         ))}
         <Next current={props.match.params.breed} />
         <Prev current={props.match.params.breed} />
